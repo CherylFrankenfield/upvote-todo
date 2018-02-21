@@ -1,24 +1,44 @@
 import React from 'react';
-import Body from './Body';
+import Form from './Form';
+import List from './List';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-class App extends React.Component {
-
-  constructor(props) {
+class App extends React.Component{
+  constructor(props){
     super(props);
     this.state = {
-      mastertoDoList: {},
-      selectedItem: null
+      mastertoDoList: {
+        '1': {
+          chore: 'chore',
+          description: 'homework',
+          rating: 'rating',
+          completed: false,
+          id: '1'
+        },
+        '2': {
+          chore: 'dishes',
+          description: 'dishes',
+          rating: 'rating',
+          completed: false,
+          id: '2'
+        }
+      }
     }
-  };
+  }
 
-
-  render(){
+  render() {
     return(
       <div>
-        <Body/>
+        <Form/>
+        <List toDoList = {this.state.mastertoDoList}/>
       </div>
     );
-  };
-};
 
-export default App;
+  }
+}
+
+App.propTypes = {
+  mastertoDoList: PropTypes.Object
+};
+export default connect()(App);
