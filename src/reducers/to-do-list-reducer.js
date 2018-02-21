@@ -7,6 +7,7 @@ export default (state = {}, action) => {
         chore: chore,
         description: description,
         rating: rating,
+        completed: false,
         id: id
       }
     });

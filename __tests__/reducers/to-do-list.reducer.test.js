@@ -7,6 +7,7 @@ describe('toDoListReducer', ()=> {
     chore: 'Learn React',
     description: 'Get EggHead subscription',
     rating: 1,
+    completed: false,
     id: 0
   };
 
@@ -23,6 +24,7 @@ describe('toDoListReducer', ()=> {
       chore: chore,
       description: description,
       rating: rating,
+      completed: false,
       id: id
     };
     expect(toDoListReducer({}, action)).toEqual({
@@ -30,6 +32,7 @@ describe('toDoListReducer', ()=> {
         chore: chore,
         description: description,
         rating: rating,
+        completed: false,
         id: id
       }
     });
