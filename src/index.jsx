@@ -5,7 +5,7 @@ import { AppContainer } from 'react-hot-loader';
 import { createStore } from 'redux';
 import toDoListReducer from './reducers/to-do-list-reducer';
 import { HashRouter } from 'react-router-dom';
-
+import {Provider} from 'react-redux';
 
 const store = createStore(toDoListReducer);
 
