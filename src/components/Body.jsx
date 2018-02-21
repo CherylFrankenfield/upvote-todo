@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 function Body() {
   return (
@@ -8,4 +9,4 @@ function Body() {
   );
 }
 
-export default Body;
+export default connect()(Body);
