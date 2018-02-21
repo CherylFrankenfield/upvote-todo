@@ -7,38 +7,27 @@ import PropTypes from 'prop-types';
 class App extends React.Component{
   constructor(props){
     super(props);
-    this.state = {
-      mastertoDoList: {
-        '1': {
-          chore: 'chore',
-          description: 'homework',
-          rating: 'rating',
-          completed: false,
-          id: '1'
-        },
-        '2': {
-          chore: 'dishes',
-          description: 'dishes',
-          rating: 'rating',
-          completed: false,
-          id: '2'
-        }
-      }
+    console.log(props);
     }
-  }
 
   render() {
     return(
       <div>
         <Form/>
-        <List toDoList = {this.state.mastertoDoList}/>
+        <List/>
       </div>
     );
 
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    mastertoDoList: state.mastertoDoList
+  }
+}
+
 App.propTypes = {
-  mastertoDoList: PropTypes.Object
+  mastertoDoList: PropTypes.object
 };
-export default connect()(App);
+export default connect(mapStateToProps)(App);
