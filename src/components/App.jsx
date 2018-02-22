@@ -3,18 +3,19 @@ import Form from './Form';
 import List from './List';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+// import { withRouter } from 'react-router-dom';
 
 class App extends React.Component{
   constructor(props){
     super(props);
     console.log(props);
-    }
+  }
 
   render() {
     return(
       <div>
         <Form/>
-        <List/>
+        <List toDoList={this.props.mastertoDoList}/>
       </div>
     );
 
@@ -23,9 +24,9 @@ class App extends React.Component{
 
 const mapStateToProps = state => {
   return {
-    mastertoDoList: state.mastertoDoList
-  }
-}
+    mastertoDoList: state
+  };
+};
 
 App.propTypes = {
   mastertoDoList: PropTypes.object

@@ -1,4 +1,4 @@
-export default (state = {
+const test = {
   1: {
     chore: 'chore',
     description: 'homework',
@@ -13,13 +13,12 @@ export default (state = {
     completed: false,
     id: '2'
   }
-}, action) => {
-
+}
+export default (state = test, action) => {
   switch (action.type) {
   case 'ADD_ITEM':
-
     const { chore, description, rating, id, completed } = action;
-    let newState = Object.assign({}, state.mastertoDoList, {
+    let newState = Object.assign({}, state, {
       [id]: {
         chore: chore,
         description: description,
