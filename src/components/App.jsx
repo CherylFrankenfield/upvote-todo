@@ -3,13 +3,8 @@ import Form from './Form';
 import List from './List';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-// import { withRouter } from 'react-router-dom';
 
 class App extends React.Component{
-  constructor(props){
-    super(props);
-    console.log(props);
-  }
 
   render() {
     return(
@@ -18,7 +13,6 @@ class App extends React.Component{
         <List toDoList={this.props.mastertoDoList}/>
       </div>
     );
-
   }
 }
 
